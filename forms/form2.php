@@ -13,10 +13,10 @@
 </center>
 <?php 
     session_start();
-
     $address = isset($_POST["address"]) ? $_POST["address"] : 0;
-    $_SESSION["addressNB"] = $_POST["address"];
-    echo $_SESSION["addressNB"];
+    $_SESSION["number1"]["addressNB"] = $_POST["address"];
+    // $_SESSION["number2"]["addressNB"] = $_SESSION["number1"]["addressNB"] ;
+    var_dump($_SESSION["formData"]);
 
 for ($i = 1; $i <= $address; $i++) {
     ?>

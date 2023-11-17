@@ -1,4 +1,5 @@
 <?php
+//ajouter ladresse a la base de donner
  function createAddress($data) {
     global $conn;
     $query="INSERT INTO address VALUES (NULL,?,?,?,?,?)";
@@ -15,11 +16,13 @@
         }
         };
 
-function getUserByStreet(string $street)
+
+// but: utiliser cette fonction pour pouvoir valider ladresse dans validations.php
+function getUserByTypeAndZipCode($type,$zipcode)
 {
     global $conn;
 
-    $query = "SELECT * FROM user WHERE address.street = '" . $street."';";
+    $query = "SELECT * FROM address WHERE type = '" . $type . "' AND zipcode = '" . $zipcode . "';";
 
     //var_dump($query);
     $result = mysqli_query($conn, $query);
@@ -28,4 +31,6 @@ function getUserByStreet(string $street)
         $data = mysqli_fetch_assoc($result);
         return $data;
 }
+
+
 ?>

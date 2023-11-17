@@ -9,12 +9,13 @@ for ($i = 1; $i <= $addressNB; $i++) {
     ?>
     <form method="POST" action="../results/resultat.php">
         <div class="form-group">
+            <input type="hidden" name="action" value="addressForm">
             <center><h3>adresse <?php echo $i; ?> </h3></center>
             <label for="street<?php echo $i; ?>">Street:</label>
             <input type="text" id="street<?php echo $i; ?>" name="street<?php echo $i; ?>" value="<?php echo isset($_SESSION["formData"]["street$i"]) ? $_SESSION["formData"]["street$i"] : "" ?>">
             <br>
             <label for="street_nb<?php echo $i; ?>">Street number:</label>
-            <input type="text" id="street_nb<?php echo $i; ?>" name="street_nb<?php echo $i; ?>" value="<?php echo isset($_SESSION["formData"]["street_nb$i"]) ? $_SESSION["formData"]["street_nb$i"] : "" ?>">
+            <input type="number" id="street_nb<?php echo $i; ?>" name="street_nb<?php echo $i; ?>" value="<?php echo isset($_SESSION["formData"]["street_nb$i"]) ? $_SESSION["formData"]["street_nb$i"] : "" ?>">
             <br>
             <label for="type<?php echo $i; ?>">Type:</label>
             <select id="type<?php echo $i; ?>" name="type<?php echo $i; ?>">

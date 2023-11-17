@@ -1,10 +1,8 @@
 <?php
 session_start();
-
-// Access the session variable set in file1.php
+//utiliser le nombre dadresses dans le formulaire qui suit
 $addressNB = isset($_SESSION["number1"]["addressNB"]) ? $_SESSION["number1"]["addressNB"] : 0;
-echo $addressNB;
-var_dump($_SESSION["formData"]);
+// des champs preremplies
 for ($i = 1; $i <= $addressNB; $i++) {
     ?>
     <form method="POST" action="../results/resultat.php">

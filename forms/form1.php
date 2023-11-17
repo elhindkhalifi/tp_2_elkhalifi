@@ -1,9 +1,8 @@
 <body>
 <center>
-<h2> </h2>
-<!-- <a href="../index.php">Retour Acceuil</a> -->
+<h2>Bienvenue </h2>
 </center>
- 
+
 <form method="post" action="form2.php">
         <input type="hidden" name="action" value="addresses">
         <label for="address">Combien d'adresses avez-vous ?</label>

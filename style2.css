@@ -8,7 +8,7 @@ body {
   }
   
   center {
-    margin-top: 50px; /* Adjust as needed */
+    margin-top: 50px;
   }
   
   h2 {
@@ -30,7 +30,9 @@ body {
     color: #555;
   }
   
-  input[type="number"] {
+  input[type="text"],
+  input[type="number"],
+  select {
     width: 100%;
     padding: 8px;
     margin-bottom: 15px;

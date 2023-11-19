@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="styles.css"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <link rel="stylesheet" href="../style2.css">
     <title>Document</title>
 </head>
 <body>
@@ -14,9 +14,9 @@
 <?php 
     session_start();
     $address = isset($_POST["address"]) ? $_POST["address"] : 0;
-//recuperer le nombre d'adresses pour pouvoir lutiliser dans les autres formulaires
+//recuperer le nombre d'adresses pour pouvoir lutiliser dans les autres boucles
     $_SESSION["number1"]["addressNB"] = $_POST["address"];
-// affichage des formulaires repeated le nombre de fois que lutlisateur veut
+// affichage des formulaires repeated le nombre de fois que lutilisateur veut
 for ($i = 1; $i <= $address; $i++) {
     ?>
     <form method="POST" action="../results/resultat.php">

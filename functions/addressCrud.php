@@ -1,17 +1,15 @@
 <?php
-//ajouter ladresse a la base de donner
+//ajouter ladresse a la base de donnees
  function createAddress($data) {
     global $conn;
     $query="INSERT INTO address VALUES (NULL,?,?,?,?,?)";
     If( $stmt=mysqli_prepare($conn, $query)){
     /* Lecture des marqueurs */
-    mysqli_stmt_bind_param($stmt,"sssss",$data['street'],$data['street_nb'],$data['type'],$data['city'],$data['zipcode']);
+    mysqli_stmt_bind_param($stmt,"sisss",$data['street'],$data['street_nb'],$data['type'],$data['city'],$data['zipcode']);
     /* Exécution de la requête*/
     $result= mysqli_stmt_execute($stmt);
     echo "<br> <br>";
-    echo"coucou ADRESSE AJOUTE";
     echo "<br> <br>";
-    var_dump($result);
     return $result;
         }
         };

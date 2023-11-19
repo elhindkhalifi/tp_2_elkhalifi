@@ -41,7 +41,7 @@
             echo "<p class='error'>" . $zipCodeIsValid["msg"] . "</p>";
             echo "<p class='error'>" . $addressIsValid["msg"] . "</p>";
         };};
-        
+
         // Afficher toutes les adresses quand elles sont toutes valides
         if ($allAddressesValid) {
             for ($i = 1; $i <= $addressNB; $i++) {

@@ -48,6 +48,14 @@ function zipCodeIsValid($zipcode): array
         ];
     }
     return $result;
+};
+function addressNbIsValid($word){
+// Vérifier si l'entrée est un nombre
+if (is_numeric($word)) {
+    return true; // L'entrée est un nombre
+} else {
+    return false; // L'entrée n'est pas un nombre
+}
 }
 
 ?>

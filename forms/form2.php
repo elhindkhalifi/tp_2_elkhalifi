@@ -7,16 +7,20 @@
     <title>Document</title>
 </head>
 <body>
-<center>
-    <h2>Les donnees de vos adresses</h2>
-    <a href="form1.php">Retour</a>
-</center>
+
 <?php 
+require_once('../functions/validations.php');
     session_start();
     $address = isset($_POST["address"]) ? $_POST["address"] : 0;
 //recuperer le nombre d'adresses pour pouvoir lutiliser dans les autres boucles
     $_SESSION["number1"]["addressNB"] = $_POST["address"];
 // affichage des formulaires repeated le nombre de fois que lutilisateur veut
+if (addressNbIsValid($address)) {
+    // L'entrée est un nombre, vous pouvez poursuivre le traitement
+    echo"<center>
+    <h2>Les donnees de vos adresses</h2>
+    <a href='form1.php'>Retour</a>
+</center>";
 for ($i = 1; $i <= $address; $i++) {
     ?>
     <form method="POST" action="../results/resultat.php">
@@ -56,7 +60,11 @@ for ($i = 1; $i <= $address; $i++) {
             <input type="submit" value="Submit">
         </center>
     </form>
+ <?php }else {
+    // L'entrée n'est pas un nombre, afficher un message d'erreur
+    echo 'Veuillez saisir un nombre valide.';
+}?>
 
-
+<a href='form1.php'>Retour</a>
 </body>
 </html>
